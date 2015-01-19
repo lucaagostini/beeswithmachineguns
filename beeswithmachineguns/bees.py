@@ -56,6 +56,7 @@ def _read_server_list():
         zone = f.readline().strip()
         text = f.read()
         instance_ids = text.split('\n')
+        instance_ids = [instance_id for instance_id in instance_ids if instance_id]
 
         print 'Read %i bees from the roster.' % len(instance_ids)
 
